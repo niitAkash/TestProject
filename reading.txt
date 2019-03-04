@@ -1,0 +1,94 @@
+
+using System;
+
+namespace Aksh
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            char c;
+            float i,j;
+            double t=0;
+                Console.WriteLine(" d for domestic");
+                Console.WriteLine("n for non domestic");
+
+            c = char.Parse(Console.ReadLine());
+            Console.Write("current reading :");
+            i = float.Parse(Console.ReadLine());
+            Console.Write("previous reading :");
+            j = float.Parse(Console.ReadLine());
+            i = i - j;
+            if (c == 'd' || c == 'D')
+            {
+                     if (i < 201)
+                             t = i * 5;
+                     else if (i < 301)
+                    {
+                        t = t+200 * 5;
+                        i = i - 200;
+                        t =t+ i * 7.2;
+                    }
+                    else if (i < 401)
+                    {
+                        t = t+200 * 5;
+                        i = i - 300;
+                        t = t+100 * 7.2;
+                        t = t + i * 8.5;
+                    }
+                    else if (i < 801)
+                    {
+                        t = t+200 * 5;
+                        i = i - 400;
+                        t = t+100 * 7.2;
+                        t = t+100 * 8.5;
+                        t = t + i * 9;
+                    }
+                    else
+                    {
+                        t = 200 * 5;
+                        i = i - 800;
+                        t = 100 * 7.2;
+                         t = 100 * 8.5;
+                        t = 400 * 9;
+                        t = t + i * 9.5;
+                    }
+
+
+                 }
+                else
+                {      
+                    if (i < 101)
+                        t = i * 7.5;
+                    else if (i < 301)
+                    {
+                        t = 100 * 7.5;
+                        i = i - 100;
+                        t =t+ (i * 8.9);
+                    }
+                    else if (i < 501)
+                    {
+                        t = t+ 100 * 7.5;
+                        i = i - 300;
+                        t = t+200 * 8.8;
+                        t = t + i * 9.4;
+                    }
+                
+                    else
+                    {
+                        t = t+ 100 * 7.5;
+                        i = i - 500;
+                        t = t+ 200 * 8.9;
+                    t = t+200 * 9.4;
+                   
+                    t = t + i * 10;
+                }
+
+
+            }
+            Console.WriteLine("value is "+t);
+            Console.ReadKey();
+        }
+    }
+}
